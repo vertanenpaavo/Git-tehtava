@@ -1,10 +1,15 @@
 import java.util.Random;
+import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) throws Exception {
         Random random = new Random();
+        Scanner in = new Scanner(System.in);
         
-        int money = 5;
+        System.out.println("Paljonko rahaa laitetaan?");
+        
+        String scmoney = in.nextLine();
+        int money = Integer.parseInt(scmoney);
 
         while (money > 0)
         {
@@ -27,6 +32,13 @@ public class App {
             {
                 System.out.println("Hävisit!");
             }
+            System.out.println("Haluatko pelata uudestaan? Jos haluat, paina Enter. Jos et halua, kirjoita e ja paina Enter");
+            String repeat = in.nextLine();
+            if (repeat.equals("e"))
+            {
+                    money = 0;
+            }
         }
+        System.out.println("Kiitos pelistä!");
     }
 }
